@@ -35,28 +35,28 @@ module.exports = {
       })
     })
   },
-  getEngineer: (skill_name, name) => {
+  getEngineer: (skill_name, name, sortParam, sortChoose, limit, offset) => {
     return new Promise((resolve, reject) => {
-      sql.query(`SELECT * FROM view_engineer WHERE skill_name LIKE '%${skill_name}%' OR name LIKE '%${name}%' `, (err, result) => {
-        if (err) reject(new Error(err))
-        resolve(result)
-      })
-    })
-  },
-  sort: (param, sortChoose) => {
-    return new Promise((resolve, reject) => {
-      sql.query(`SELECT * FROM view_engineer ORDER BY ${param} ${sortChoose}`, (err, result) => {
-        if (err) reject(new Error(err))
-        resolve(result)
-      })
-    })
-  },
-  engineerPage: (limit, offset) => {
-    return new Promise((resolve, reject) => {
-      sql.query(`SELECT * from view_engineer LIMIT ${limit} OFFSET ${offset}`, (err, result) => {
+      sql.query(`SELECT * FROM view_engineer WHERE skill_name LIKE '%${skill_name}%' OR name LIKE '%${name}% ORDER BY ${sortParam} ${sortChoose} LIMIT ${limit} OFFSET ${offset}' `, (err, result) => {
         if (err) reject(new Error(err))
         resolve(result)
       })
     })
   }
+  // sort: (param, sortChoose) => {
+  //   return new Promise((resolve, reject) => {
+  //     sql.query(`SELECT * FROM view_engineer ORDER BY ${param} ${sortChoose}`, (err, result) => {
+  //       if (err) reject(new Error(err))
+  //       resolve(result)
+  //     })
+  //   })
+  // },
+  // engineerPage: (limit, offset) => {
+  //   return new Promise((resolve, reject) => {
+  //     sql.query(`SELECT * from view_engineer LIMIT ${limit} OFFSET ${offset}`, (err, result) => {
+  //       if (err) reject(new Error(err))
+  //       resolve(result)
+  //     })
+  //   })
+  // }
 }

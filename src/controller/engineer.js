@@ -71,29 +71,11 @@ module.exports = {
   getEngineer: (req, res) => {
     const skill_name = req.query.skill_name
     const name = req.query.name
-    engineerModel.getEngineer(skill_name, name)
-      .then(result => {
-        response(res, 200, result)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  },
-  sort: (req, res) => {
-    const param = req.query.param
+    const sortParam = req.query.sortParam
     const sortChoose = req.query.sortChoose
-    engineerModel.sort(param, sortChoose)
-      .then(result => {
-        response(res, 200, result)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-  },
-  engineerPage: (req, res) => {
     const limit = req.query.limit
     const offset = req.query.offset
-    engineerModel.engineerPage(limit, offset)
+    engineerModel.getEngineer(skill_name, name, sortParam, sortChoose, limit, offset)
       .then(result => {
         response(res, 200, result)
       })
@@ -101,5 +83,27 @@ module.exports = {
         console.log(err)
       })
   }
+  // sort: (req, res) => {
+  //   const param = req.query.param
+  //   const sortChoose = req.query.sortChoose
+  //   engineerModel.sort(param, sortChoose)
+  //     .then(result => {
+  //       response(res, 200, result)
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //     })
+  // },
+  // engineerPage: (req, res) => {
+  //   const limit = req.query.limit
+  //   const offset = req.query.offset
+  //   engineerModel.engineerPage(limit, offset)
+  //     .then(result => {
+  //       response(res, 200, result)
+  //     })
+  //     .catch(err => {
+  //       console.log(err)
+  //     })
+  // }
 
 }

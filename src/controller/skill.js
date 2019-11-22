@@ -65,22 +65,21 @@ module.exports = {
       .catch(err => {
         console.log(err)
       })
+  },
+  putDetailSkill: (req, res) => {
+      const id = req.params.id
+      const {skill_level} = req.body
+      const data2 = {
+          skill_level,
+          updated_at: new Date()
+      }
+      skillModel.putDetailSkill(data2, id)
+      .then(result => {
+          response(res, 200, result)
+      })
+      .catch(err => {
+          console.log(err)
+      })
   }
-  // putDetailSkill: (req, res) => {
-  //     const id_eng = req.params.id_eng
-  //     const id_skill = req.params.id_skill
-  //     const {skill_level} = req.body
-  //     const data2 = {
-  //         skill_level,
-  //         updated_at: new Date()
-  //     }
-  //     skillModel.putDetailSkill(data2, id_eng, id_skill)
-  //     .then(result => {
-  //         response(res, 200, result)
-  //     })
-  //     .catch(err => {
-  //         console.log(err)
-  //     })
-  // }
 
 }
