@@ -1,4 +1,5 @@
-  <h3 align="center">Hiring Partner App API</h3>
+  <h1 align="center">Hiring Partner App API</h1>
+  <h4 align="center">Arkademy Week #1 task</h4>
 
   <p align="center">
   Backend for Application Hiring Engineer
