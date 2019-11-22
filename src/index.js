@@ -12,9 +12,9 @@ const { verifyToken } = require('./helpers/auth')
 Route
   .use('/engineer', verifyToken, engineer)
   .use('/hirepart', verifyToken, hirepart)
-  .use('/user', user)
+  .use('/user',  user)
   .use('/skill', verifyToken, skill)
   .use('/login', login)
-  .use('/logout', logout)
+  .use('/logout', verifyToken, logout)
 
 module.exports = Route

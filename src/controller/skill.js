@@ -32,7 +32,7 @@ module.exports = {
     const data = {
       skill_name
     }
-    skillModel.putSkill(data, 'Skill name has successfully updated')
+    skillModel.putSkill(data, skill_id, 'Skill name has successfully updated')
       .then(result => {
         response(res, 200, result)
       })
@@ -67,15 +67,15 @@ module.exports = {
       })
   },
   putDetailSkill: (req, res) => {
-    const id = req.params.id
+    const id_detil = req.params.id_detil
     const { skill_level } = req.body
     const data2 = {
       skill_level,
       updated_at: new Date()
     }
-    skillModel.putDetailSkill(data2, id)
+    skillModel.putDetailSkill(data2, id_detil)
       .then(result => {
-        response(res, 200, 'Your skill data has successfully updated!')
+        response(res, 200, result)
       })
       .catch(err => {
         console.log(err)

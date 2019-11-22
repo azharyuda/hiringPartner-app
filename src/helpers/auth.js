@@ -12,10 +12,6 @@ module.exports = {
       const dbjwt = passData[0].jwt
       const jwtheader = req.headers.jwt
       if (bcrypt.compareSync(reqPass, sqlPass)) {
-        if (dbjwt === null) {
-          return 'Your token empty, pls REGISTER!'
-        } else {
-          if (dbjwt === jwtheader) {
             const payload = {
               id: passData[0].id,
               uuid: uuid()
@@ -23,10 +19,7 @@ module.exports = {
             const token = jwt.sign(payload, process.env.KEYS, { expiresIn: '24h' })
             loginModel.patchJwtById(token, payload.id)
             return token
-          } else {
-            return 'Your token isnt autorized'
-          }
-        }
+        
       } else {
         return 'Wrong Pass'
       }
@@ -37,9 +30,18 @@ module.exports = {
 
   verifyToken: async (req, res, next) => {
     const token = req.headers.jewete
+    const decode = jwt.decode(token)
 
     if (!token) {
       return res.status(200).send('Please login first before accessing this page')
+    }
+    const userjwt =await loginModel.getJwtDb(decode.id)
+    if(!userjwt){
+      return res.status(401).send('Token is not authorized')
+    }
+    const jwtdata = userjwt[0].jwt
+    if(token !== jwtdata){
+      return res.status(401).send('token is not available')
     }
     jwt.verify(token, process.env.KEYS, (err, decode) => {
       if (token === 0) {

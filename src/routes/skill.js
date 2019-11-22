@@ -9,5 +9,5 @@ Route
   .put('/update/:skill_id', getSkill.putSkill)
   .delete('/delete/:skill_id', getSkill.deleteSkill)
   .post('/detailSkill/post/', getSkill.postDetailSkill)
-  .put('/detailSkill/update/:id', getSkill.putDetailSkill)
+  .put('/detailSkill/update/:id_detil', getSkill.putDetailSkill)
 module.exports = Route
