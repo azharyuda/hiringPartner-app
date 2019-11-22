@@ -37,40 +37,16 @@ module.exports = {
 
   verifyToken: async (req, res, next) => {
     const token = req.headers.jewete
-    const decode = jwt.decode(token, { complete: true })
-    
-    // console.log(userId)
-    // return res.send(userId.toString())
 
-    if(!token) {
-      return res.status(200).send("login dulu")
+    if (!token) {
+      return res.status(200).send('Please login first before accessing this page')
     }
-
-    // try {
-    //   const tokenDb = await loginModel.getJwtDB(userId)
-    //   // console.log(tokenDb)
-    //   const tokenCheck = tokenDb[0].jwt
-    //   console.log(tokenCheck)
-    //   if(!tokenDb && !token) {
-    //     return res.send("token tidka sama")
-    //   }
-
-      
-        jwt.verify(token, process.env.KEYS, (err, decode) => {
-          if (token === 0) {
-            return res.status(400).send('Token doesnt exist')
-          }
-          else {
-            next()
-          }
-        })
-      
-    //   else {
-    //     return res.status(400).send('Please Login to Continue your step')
-    //   }
-
-    // } catch (error) {
-    //   return res.status(400).send("login dulu lah")
-    // }
+    jwt.verify(token, process.env.KEYS, (err, decode) => {
+      if (token === 0) {
+        return res.status(400).send('Token doesnt exist')
+      } else {
+        next()
+      }
+    })
   }
 }

@@ -19,7 +19,7 @@ module.exports = {
     }
     skillModel.postSkill(data)
       .then(result => {
-        response(res, 200, result)
+        response(res, 200, 'Skill has successfully added')
       })
       .catch(err => {
         console.log(err)
@@ -32,7 +32,7 @@ module.exports = {
     const data = {
       skill_name
     }
-    skillModel.putSkill(data, skill_id)
+    skillModel.putSkill(data, 'Skill name has successfully updated')
       .then(result => {
         response(res, 200, result)
       })
@@ -45,7 +45,7 @@ module.exports = {
     const skill_id = req.params.skill_id
     skillModel.deleteSkill(skill_id)
       .then(result => {
-        response(res, 200, result)
+        response(res, 200, 'Skill has been deleted!')
       })
       .catch(err => {
         console.log(err)
@@ -60,7 +60,7 @@ module.exports = {
     }
     skillModel.postDetailSkill(data2)
       .then(result => {
-        response(res, 200, result)
+        response(res, 200, 'Your skill data has successfully saved!')
       })
       .catch(err => {
         console.log(err)
@@ -75,7 +75,7 @@ module.exports = {
     }
     skillModel.putDetailSkill(data2, id)
       .then(result => {
-        response(res, 200, result)
+        response(res, 200, 'Your skill data has successfully updated!')
       })
       .catch(err => {
         console.log(err)

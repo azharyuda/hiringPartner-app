@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 
 module.exports = {
   deleteToken: async (req, res) => {
-    const tokenHeader = req.headers['Authorization']
+    const tokenHeader = req.headers.Authorization
     const id = req.body.id
     // const result = await logoutModel.deleteToken(id)
     console.log(id.id)

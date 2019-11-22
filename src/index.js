@@ -13,7 +13,7 @@ Route
   .use('/engineer', verifyToken, engineer)
   .use('/hirepart', verifyToken, hirepart)
   .use('/user', user)
-  .use('/skill',  verifyToken, skill)
+  .use('/skill', verifyToken, skill)
   .use('/login', login)
   .use('/logout', logout)
 

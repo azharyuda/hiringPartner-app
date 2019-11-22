@@ -15,20 +15,20 @@ module.exports = {
   addUser: (req, res) => {
     const salt = bycrypt.genSaltSync(10)
     bycrypt.hash(req.body.passw, salt, (err, hash) => {
-      const { uname, email, user_type } = req.body
+      const { uname, email, status } = req.body
 
       const data = {
         uname,
         passw: hash,
         email,
-        user_type,
+        status: 0,
         created_at: new Date(),
         updated_at: new Date()
       }
 
       userModel.addUser(data)
         .then(result => {
-          response(res, 200, result)
+          response(res, 200, 'Register success!')
         })
         .catch(err => {
           console.log(err)
@@ -40,20 +40,20 @@ module.exports = {
     const id = req.params.id
     const salt = bycrypt.genSaltSync(10)
     bycrypt.hash(req.body.passw, salt, (err, hash) => {
-      const { uname, email, user_type } = req.body
+      const { uname, email, status } = req.body
 
       const data = {
         uname,
         passw: hash,
         email,
-        user_type,
+        status: 0,
         created_at: new Date(),
         updated_at: new Date()
       }
 
       userModel.updateUser(data, id)
         .then(result => {
-          response(res, 200, result)
+          response(res, 200, 'Data is successfully updated')
         })
         .catch(err => {
           console.log(err)
@@ -66,7 +66,7 @@ module.exports = {
 
     userModel.deleteUser(id)
       .then(result => {
-        response(res, 200, result)
+        response(res, 200, 'Data is successfully deleted')
       })
       .catch(err => {
         console.log(err)

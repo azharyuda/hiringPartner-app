@@ -22,7 +22,7 @@ module.exports = {
     }
     hireModel.postHire(data)
       .then(result => {
-        response(res, 200, result)
+        response(res, 200, 'Data is successfully saved!')
       })
       .catch(err => {
         console.log(err)
@@ -40,7 +40,7 @@ module.exports = {
     }
     hireModel.putHire(data, id)
       .then(result => {
-        response(res, 200, result)
+        response(res, 200, 'Data is successfully updated')
       })
       .catch(err => {
         console.log(err)
@@ -51,7 +51,7 @@ module.exports = {
     const id = req.params.id
     hireModel.deleteHire(id)
       .then(result => {
-        response(res, 200, result)
+        response(res, 200, 'Data is successfully deleted')
       })
       .catch(err => {
         console.log(err)

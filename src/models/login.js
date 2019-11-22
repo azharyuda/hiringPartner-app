@@ -3,7 +3,7 @@ const database = require('../config/db')
 module.exports = {
   getLogin: (username) => {
     return new Promise((resolve, reject) => {
-      database.query(`SELECT id, passw FROM tbluser where uname = '${username}'`, (err, result) => {
+      database.query(`SELECT * FROM tbluser where uname = '${username}'`, (err, result) => {
         if (err) reject(new Error(err))
         resolve(result)
       })

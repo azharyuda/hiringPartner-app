@@ -4,7 +4,7 @@ module.exports = {
   getLogin: async (req, res) => {
     const data = {
       uname: req.body.uname,
-      passw: req.body.uname
+      passw: req.body.passw
     }
     try {
       const passData = await modelsLogin.getLogin(data.uname)

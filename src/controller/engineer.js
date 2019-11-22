@@ -25,7 +25,7 @@ module.exports = {
     }
     engineerModel.addEngineer(data)
       .then(result => {
-        response(res, 200, result)
+        response(res, 200, 'Data is successfully saved')
       })
       .catch(err => {
         console.log(err)
@@ -44,7 +44,7 @@ module.exports = {
     }
     engineerModel.putEngineer(data, id)
       .then(result => {
-        response(res, 200, result)
+        response(res, 200, 'Data is successfully updated')
       })
       .catch(err => {
         console.log(err)
@@ -55,7 +55,7 @@ module.exports = {
     const id = req.params.id
     engineerModel.deleteEngineer(id)
       .then(result => {
-        response(res, 200, result)
+        response(res, 200, 'Data is successfully Deleted')
       })
       .catch(err => {
         console.log(err)
