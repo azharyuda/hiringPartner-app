@@ -1,17 +1,26 @@
-const sql = require('../config/db')
+const database = require('../config/db')
 
 module.exports = {
-  getUname: (uname) => {
+  getLogin: (username) => {
     return new Promise((resolve, reject) => {
-      sql.query('SELECT * FROM tbluser WHERE uname = ?', uname, (err, result) => {
+      database.query(`SELECT id, passw FROM tbluser where uname = '${username}'`, (err, result) => {
         if (err) reject(new Error(err))
         resolve(result)
       })
     })
   },
-  saveToken: (token, id) => {
+
+  patchJwtById: (jwt, id) => {
     return new Promise((resolve, reject) => {
-      sql.query(`UPDATE tbluser SET token = '${token}', status=1 WHERE id = '${id}'`, (err, result) => {
+      database.query('UPDATE tbluser set jwt = ? WHERE id = ?', [jwt, id], (err, result) => {
+        if (err) reject(new Error(err))
+        resolve(result)
+      })
+    })
+  },
+  getJwtDb: (id) => {
+    return new Promise((resolve, reject) => {
+      database.query('SELECT jwt from tbluser WHERE id = ? LIMIT 1', id, (err, result) => {
         if (err) reject(new Error(err))
         resolve(result)
       })

@@ -13,7 +13,7 @@ module.exports = {
   },
 
   addEngineer: (req, res) => {
-    const { name, description, location, date_of_birth, showcase_id, skill_name, skill_level } = req.body
+    const { name, description, location, date_of_birth, showcase_id } = req.body
     const data = {
       name,
       description,
@@ -24,13 +24,6 @@ module.exports = {
       updated_at: new Date()
     }
     engineerModel.addEngineer(data)
-      .then(result => {
-        response(res, 200, result)
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    engineerModel.addEngineer()
       .then(result => {
         response(res, 200, result)
       })

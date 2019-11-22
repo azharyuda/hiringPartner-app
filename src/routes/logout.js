@@ -4,6 +4,6 @@ const Route = express.Router()
 const { deleteToken } = require('../controller/logout')
 
 Route
-  .post('/', deleteToken)
+  .put('/', deleteToken)
 
 module.exports = Route

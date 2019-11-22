@@ -37,7 +37,7 @@ module.exports = {
   },
   getEngineer: (skill_name, name, sortParam, sortChoose, limit, offset) => {
     return new Promise((resolve, reject) => {
-      sql.query(`SELECT * FROM view_engineer WHERE skill_name LIKE '%${skill_name}%' OR name LIKE '%${name}% ORDER BY ${sortParam} ${sortChoose} LIMIT ${limit} OFFSET ${offset}' `, (err, result) => {
+      sql.query(`SELECT * FROM view_engineer WHERE skill_name LIKE '%${skill_name}%' OR name LIKE '%${name}%' ORDER BY ${sortParam} ${sortChoose} LIMIT ${limit} OFFSET ${offset} `, (err, result) => {
         if (err) reject(new Error(err))
         resolve(result)
       })

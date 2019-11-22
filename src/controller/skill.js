@@ -67,18 +67,18 @@ module.exports = {
       })
   },
   putDetailSkill: (req, res) => {
-      const id = req.params.id
-      const {skill_level} = req.body
-      const data2 = {
-          skill_level,
-          updated_at: new Date()
-      }
-      skillModel.putDetailSkill(data2, id)
+    const id = req.params.id
+    const { skill_level } = req.body
+    const data2 = {
+      skill_level,
+      updated_at: new Date()
+    }
+    skillModel.putDetailSkill(data2, id)
       .then(result => {
-          response(res, 200, result)
+        response(res, 200, result)
       })
       .catch(err => {
-          console.log(err)
+        console.log(err)
       })
   }
 

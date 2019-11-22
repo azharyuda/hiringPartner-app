@@ -42,12 +42,12 @@ module.exports = {
     })
   },
   putDetailSkill: (data2, id) => {
-      return new Promise ((resolve, reject) => {
-          sql.query('UPDATE skill_detail SET skill_level = ? WHERE id = ?', [data2, id], (err, result) => {
-              if(err) reject (new Error(err))
-              resolve(result)
-          })
+    return new Promise((resolve, reject) => {
+      sql.query('UPDATE skill_detail SET skill_level = ? WHERE id = ?', [data2, id], (err, result) => {
+        if (err) reject(new Error(err))
+        resolve(result)
       })
+    })
   }
 
 }
