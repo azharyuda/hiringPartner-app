@@ -1,15 +1,6 @@
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-
-
-
-<!-- PROJECT LOGO -->
-<br />
-  <h3 align="center">Hiring Partner App API</h3>
+  <img align = "center" src = "src/ExpressJS.png">
+  <h1 align="center">Hiring Partner App API</h1>
+  <h4 align="center">Arkademy Week #1 task</h4>
 
   <p align="center">
   Backend for Application Hiring Engineer

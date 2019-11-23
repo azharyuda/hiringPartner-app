@@ -76,27 +76,5 @@ module.exports = {
         console.log(err)
       })
   }
-  // sort: (req, res) => {
-  //   const param = req.query.param
-  //   const sortChoose = req.query.sortChoose
-  //   engineerModel.sort(param, sortChoose)
-  //     .then(result => {
-  //       response(res, 200, result)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // },
-  // engineerPage: (req, res) => {
-  //   const limit = req.query.limit
-  //   const offset = req.query.offset
-  //   engineerModel.engineerPage(limit, offset)
-  //     .then(result => {
-  //       response(res, 200, result)
-  //     })
-  //     .catch(err => {
-  //       console.log(err)
-  //     })
-  // }
 
 }

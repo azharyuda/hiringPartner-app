@@ -43,20 +43,4 @@ module.exports = {
       })
     })
   }
-  // sort: (param, sortChoose) => {
-  //   return new Promise((resolve, reject) => {
-  //     sql.query(`SELECT * FROM view_engineer ORDER BY ${param} ${sortChoose}`, (err, result) => {
-  //       if (err) reject(new Error(err))
-  //       resolve(result)
-  //     })
-  //   })
-  // },
-  // engineerPage: (limit, offset) => {
-  //   return new Promise((resolve, reject) => {
-  //     sql.query(`SELECT * from view_engineer LIMIT ${limit} OFFSET ${offset}`, (err, result) => {
-  //       if (err) reject(new Error(err))
-  //       resolve(result)
-  //     })
-  //   })
-  // }
 }
