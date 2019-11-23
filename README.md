@@ -4,11 +4,7 @@
   <h4 align="center">Arkademy Week #1 task</h4>
 
   <p align="center">
-<<<<<<< HEAD
-  Backend for Application Hiring Engineer
-=======
   Backend for Hiring Partner Application
->>>>>>> 73e755314572ec434730115371260533432bbf0e
     <br />
 
   </p>
