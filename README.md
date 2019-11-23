@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-  <img align = "center" src = "src/ExpressJS.png">
-=======
+
   <img src = "https://buttercms.com/static/images/tech_banners/ExpressJS.png">
->>>>>>> 73e755314572ec434730115371260533432bbf0e
   <h1 align="center">Hiring Partner App API</h1>
   <h4 align="center">Arkademy Week #1 task</h4>
 
