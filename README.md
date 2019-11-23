@@ -3,7 +3,7 @@
   <h4 align="center">Arkademy Week #1 task</h4>
 
   <p align="center">
-  Backend for Application Hiring Engineer
+  Backend for Hiring Partner Application
     <br />
 
   </p>
