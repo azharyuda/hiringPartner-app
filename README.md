@@ -1,3 +1,4 @@
+  <img src = "https://buttercms.com/static/images/tech_banners/ExpressJS.png">
   <h1 align="center">Hiring Partner App API</h1>
   <h4 align="center">Arkademy Week #1 task</h4>
 
