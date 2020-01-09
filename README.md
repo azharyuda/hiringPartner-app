@@ -125,7 +125,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Contact me if you want to get API-KEY
 
-Azhar Yuda Partama - [@azharyuda] - work.azharyuda@gmail.com
+Azhar Yuda Partama - [@azharyuda] - azharyuda.imp@gmail.com
 
 
 
